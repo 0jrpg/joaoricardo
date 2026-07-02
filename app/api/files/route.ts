@@ -3,6 +3,10 @@ import { isAuthenticated } from "@/lib/auth";
 import { listFiles, uploadFiles } from "@/lib/github-storage";
 
 export async function GET() {
+  if (!isAuthenticated()) {
+    return NextResponse.json({ error: "Não autenticado." }, { status: 401 });
+  }
+
   try {
     const files = await listFiles();
     return NextResponse.json({ files });
