@@ -23,7 +23,7 @@ export async function GET(request: Request) {
   const rootPrefix = process.env.GITHUB_FILES_PATH || "files";
 
   const xml = `<?xml version="1.0" encoding="UTF-8"?>
-<Error xmlns="http://amazonaws.com">
+<Error xmlns="http://cdn.files.joaoricardo.space">
     <Code>AccessDenied</Code>
     <Message>Access Denied: Anonymous root bucket listing is disabled on this CDN endpoint.</Message>
     <Resource>/</Resource>
